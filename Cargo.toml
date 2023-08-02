@@ -1,7 +1,12 @@
 [package]
 name = "zenoh-ros-type"
 version = "0.1.0"
+authors = ["ChenYing Kuo <evshary@gmail.com>"]
+description = "Common Rust struct for ROS 2 messages used by Zenoh"
 edition = "2021"
+license = "Apache-2.0"
+homepage = "https://github.com/evshary/zenoh-ros-type"
+repository = "https://github.com/evshary/zenoh-ros-type"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
