@@ -1,16 +1,7 @@
+use crate::builtin_interfaces::Time;
+use crate::service::ServiceHeader;
+use crate::std_msgs::StdMsgsHeader;
 use serde_derive::{Deserialize, Serialize};
-
-#[derive(Serialize, Deserialize, PartialEq, Clone)]
-pub struct TimeStamp {
-    pub sec: i32,
-    pub nsec: u32,
-}
-
-#[derive(Serialize, Deserialize, PartialEq)]
-pub struct ServiceHeader {
-    pub guid: i64,
-    pub seq: u64,
-}
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct GateMode {
@@ -19,7 +10,7 @@ pub struct GateMode {
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct GetEngage {
-    pub ts: TimeStamp,
+    pub ts: Time,
     pub enable: bool,
 }
 
@@ -29,30 +20,21 @@ pub struct Engage {
     pub enable: bool,
 }
 
-/* We don't need to get service response currently
 #[derive(Serialize, Deserialize, PartialEq)]
 struct ResponseStatus {
     header: ServiceHeader,
     code: u32,
     message: String,
 }
-*/
 
 pub const GEAR_CMD_DRIVE: u8 = 2;
 pub const GEAR_CMD_REVERSE: u8 = 20;
 pub const GEAR_CMD_PARK: u8 = 22;
-#[allow(dead_code)]
 pub const GEAR_CMD_LOW: u8 = 23;
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct GearCommand {
-    pub ts: TimeStamp,
+    pub ts: Time,
     pub command: u8,
-}
-
-#[derive(Serialize, Deserialize, PartialEq)]
-pub struct StdMsgsHeader {
-    pub ts: TimeStamp,
-    pub frameid: String,
 }
 
 #[derive(Serialize, Deserialize, PartialEq)]
@@ -65,14 +47,14 @@ pub struct CurrentVelocity {
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct AckermannLateralCommand {
-    pub ts: TimeStamp,
+    pub ts: Time,
     pub steering_tire_angle: f32,
     pub steering_tire_rotation_rate: f32,
 }
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct LongitudinalCommand {
-    pub ts: TimeStamp,
+    pub ts: Time,
     pub speed: f32,
     pub acceleration: f32,
     pub jerk: f32,
@@ -80,7 +62,7 @@ pub struct LongitudinalCommand {
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct AckermannControlCommand {
-    pub ts: TimeStamp,
+    pub ts: Time,
     pub lateral: AckermannLateralCommand,
     pub longitudinal: LongitudinalCommand,
 }

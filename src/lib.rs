@@ -5,3 +5,6 @@
 //!
 
 pub mod autoware_msgs;
+pub mod builtin_interfaces;
+pub mod service;
+pub mod std_msgs;
