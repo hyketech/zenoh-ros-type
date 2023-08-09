@@ -6,13 +6,14 @@
 //! Here are some ROS message source:
 //! * [common_interface](https://github.com/ros2/common_interfaces): Common-used ROS message
 //! * [rcl_interface](https://github.com/ros2/rcl_interfaces): Common interface in RCL
-//! * [tier4_autoware_msgs](https://github.com/tier4/tier4_autoware_msgs/tree/tier4/universe): The
+//! * [autoware_auto_msgs](https://github.com/tier4/autoware_auto_msgs/tree/tier4/main)
 //! messages used in Autoware
 
-pub mod autoware_auto_control_msgs;
-pub mod autoware_auto_vehicle_msgs;
-pub mod builtin_interfaces;
-pub mod geometry_msgs;
-pub mod rosgraph_msgs;
+pub mod autoware_auto_msgs;
+pub mod common_interfaces;
+pub mod rcl_interfaces;
 pub mod service;
-pub mod std_msgs;
+
+pub use autoware_auto_msgs::*;
+pub use common_interfaces::*;
+pub use rcl_interfaces::*;
