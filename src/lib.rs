@@ -9,7 +9,10 @@
 //! * [tier4_autoware_msgs](https://github.com/tier4/tier4_autoware_msgs/tree/tier4/universe): The
 //! messages used in Autoware
 
-pub mod autoware_msgs;
+pub mod autoware_auto_control_msgs;
+pub mod autoware_auto_vehicle_msgs;
 pub mod builtin_interfaces;
+pub mod geometry_msgs;
+pub mod rosgraph_msgs;
 pub mod service;
 pub mod std_msgs;
