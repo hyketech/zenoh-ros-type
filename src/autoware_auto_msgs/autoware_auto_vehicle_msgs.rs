@@ -45,6 +45,12 @@ pub struct GearReport {
 }
 
 #[derive(Serialize, Deserialize, PartialEq)]
+pub struct SteeringReport {
+    pub stamp: Time,
+    pub steering_tire_angle: f32,
+}
+
+#[derive(Serialize, Deserialize, PartialEq)]
 pub struct VelocityReport {
     pub header: Header,
     pub longitudinal_velocity: f32,
