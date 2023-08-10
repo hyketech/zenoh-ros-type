@@ -55,13 +55,13 @@ pub struct VelocityReport {
 // -----service-----
 
 #[derive(Serialize, Deserialize, PartialEq)]
-pub struct ControlModeCommandRequest {
+pub struct EngageRequest {
     pub header: ServiceHeader,
     pub mode: bool,
 }
 
 #[derive(Serialize, Deserialize, PartialEq)]
-pub struct ControlModeCommandResponse {
+pub struct EngageResponse {
     pub header: ServiceHeader,
     pub code: u32,
     pub message: String,
