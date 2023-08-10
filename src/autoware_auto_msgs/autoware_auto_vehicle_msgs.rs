@@ -1,6 +1,6 @@
 use crate::builtin_interfaces::Time;
 use crate::service::ServiceHeader;
-use crate::std_msgs::StdMsgsHeader;
+use crate::std_msgs::Header;
 use serde_derive::{Deserialize, Serialize};
 
 pub mod control_mode_command {
@@ -46,7 +46,7 @@ pub struct GearReport {
 
 #[derive(Serialize, Deserialize, PartialEq)]
 pub struct VelocityReport {
-    pub header: StdMsgsHeader,
+    pub header: Header,
     pub longitudinal_velocity: f32,
     pub lateral_velocity: f32,
     pub heading_rate: f32,

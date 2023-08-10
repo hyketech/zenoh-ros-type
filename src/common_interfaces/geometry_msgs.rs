@@ -29,12 +29,6 @@ pub struct Pose {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
-pub struct PoseWithCovariance {
-    pub pose: Pose,
-    pub covariance: Vec<f64>,
-}
-
-#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct Vector3 {
     pub x: f64,
     pub y: f64,
