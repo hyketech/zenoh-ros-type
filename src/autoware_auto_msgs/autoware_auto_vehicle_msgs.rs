@@ -8,19 +8,19 @@ pub mod control_mode_command {
     pub const AUTONOMOUS: u8 = 1;
     pub const MANUAL: u8 = 2;
 }
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct ControlModeCommand {
     pub stamp: Time,
     pub mode: u8,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct ControlModeReport {
     pub stamp: Time,
     pub mode: u8,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct Engage {
     pub stamp: Time,
     pub enable: bool,
@@ -32,25 +32,25 @@ pub mod gear_command {
     pub const PARK: u8 = 22;
     pub const LOW: u8 = 23;
 }
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct GearCommand {
     pub stamp: Time,
     pub command: u8,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct GearReport {
     pub stamp: Time,
     pub report: u8,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct SteeringReport {
     pub stamp: Time,
     pub steering_tire_angle: f32,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct VelocityReport {
     pub header: Header,
     pub longitudinal_velocity: f32,
@@ -60,13 +60,13 @@ pub struct VelocityReport {
 
 // -----service-----
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct EngageRequest {
     pub header: ServiceHeader,
     pub mode: bool,
 }
 
-#[derive(Serialize, Deserialize, PartialEq)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct EngageResponse {
     pub header: ServiceHeader,
     pub code: u32,
