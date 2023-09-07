@@ -56,6 +56,27 @@ pub struct HandbrakeReport {
     pub report: bool,
 }
 
+pub mod hazard_lights_command {
+    pub const NO_COMMAND: u8 = 0;
+    pub const DISABLE: u8 = 1;
+    pub const ENABLE: u8 = 2;
+}
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct HazardLightsCommand {
+    pub stamp: Time,
+    pub command: u8,
+}
+
+pub mod hazard_lights_report {
+    pub const DISABLE: u8 = 1;
+    pub const ENABLE: u8 = 2;
+}
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct HazardLightsReport {
+    pub stamp: Time,
+    pub report: u8,
+}
+
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct SteeringReport {
     pub stamp: Time,
