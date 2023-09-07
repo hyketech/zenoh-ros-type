@@ -45,9 +45,44 @@ pub struct GearReport {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct HandbrakeCommand {
+    pub stamp: Time,
+    pub active: bool,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct HandbrakeReport {
+    pub stamp: Time,
+    pub report: bool,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct SteeringReport {
     pub stamp: Time,
     pub steering_tire_angle: f32,
+}
+
+pub mod turn_indicators_command {
+    pub const NO_COMMAND: u8 = 0;
+    pub const DISABLE: u8 = 1;
+    pub const ENABLE_LEFT: u8 = 2;
+    pub const ENABLE_RIGHT: u8 = 3;
+}
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct TurnIndicatorsCommand {
+    pub stamp: Time,
+    pub command: u8,
+}
+
+pub mod turn_indicators_report {
+    pub const DISABLE: u8 = 1;
+    pub const ENABLE_LEFT: u8 = 2;
+    pub const ENABLE_RIGHT: u8 = 3;
+}
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct TurnIndicatorsReport {
+    pub stamp: Time,
+    pub report: u8,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
