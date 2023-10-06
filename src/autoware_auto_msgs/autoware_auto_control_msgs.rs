@@ -16,6 +16,13 @@ pub struct AckermannLateralCommand {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct HighLevelControlCommand {
+    pub stamp: Time,
+    pub velocity_mps: f32,
+    pub curvature: f32,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct LongitudinalCommand {
     pub stamp: Time,
     pub speed: f32,
