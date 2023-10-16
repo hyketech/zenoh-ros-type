@@ -1,6 +1,6 @@
 [package]
 name = "zenoh-ros-type"
-version = "0.3.1"
+version = "0.3.2"
 authors = ["ChenYing Kuo <evshary@gmail.com>"]
 description = "Common Rust struct for ROS 2 messages used by Zenoh"
 edition = "2021"
