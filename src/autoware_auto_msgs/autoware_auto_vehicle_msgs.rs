@@ -1,5 +1,4 @@
 use crate::builtin_interfaces::Time;
-use crate::service::ServiceHeader;
 use crate::std_msgs::Header;
 use serde_derive::{Deserialize, Serialize};
 
@@ -169,20 +168,4 @@ pub struct VelocityReport {
     pub longitudinal_velocity: f32,
     pub lateral_velocity: f32,
     pub heading_rate: f32,
-}
-
-// -----service-----
-
-#[derive(Serialize, Deserialize, PartialEq, Clone)]
-pub struct EngageRequest {
-    pub header: ServiceHeader,
-    pub mode: bool,
-}
-
-#[derive(Serialize, Deserialize, PartialEq, Clone)]
-pub struct EngageResponse {
-    pub header: ServiceHeader,
-    pub code: u32,
-    pub message: String,
-    pub success: bool,
 }
