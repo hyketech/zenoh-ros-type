@@ -12,6 +12,7 @@
 
 pub mod autoware_auto_msgs;
 pub mod common_interfaces;
+pub mod hyke_vessel_msgs;
 pub mod rcl_interfaces;
 pub mod service;
 pub mod tier4_autoware_msgs;
