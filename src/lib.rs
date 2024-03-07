@@ -19,5 +19,6 @@ pub mod tier4_autoware_msgs;
 
 pub use autoware_auto_msgs::*;
 pub use common_interfaces::*;
+pub use hyke_vessel_msgs::*;
 pub use rcl_interfaces::*;
 pub use tier4_autoware_msgs::*;
