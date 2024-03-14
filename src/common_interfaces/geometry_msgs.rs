@@ -100,7 +100,7 @@ pub struct Twist {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct TwistWithCovariance {
     pub twist: Twist,
-    pub covariance: f64[32],
+    pub covariance: [f64;32],
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
