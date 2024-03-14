@@ -68,7 +68,7 @@ pub struct Pose {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct PoseWithCovariance {
     pub pose: Pose,
-    pub covariance: [f64;36],
+    pub covariance: [f64;32],
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
@@ -100,7 +100,7 @@ pub struct Twist {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct TwistWithCovariance {
     pub twist: Twist,
-    pub covariance: [f64;36],
+    pub covariance: f64[32],
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
