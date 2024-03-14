@@ -66,6 +66,12 @@ pub struct Pose {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct PoseWithCovariance {
+    pub pose: Pose,
+    pub covariance: f64,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct Pose2D {
     pub x: f64,
     pub y: f64,
@@ -89,6 +95,12 @@ pub struct TransformStamped {
 pub struct Twist {
     pub linear: Vector3,
     pub angular: Vector3,
+}
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct TwistWithCovariance {
+    pub twist: Twist,
+    pub covariance: f64,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
