@@ -1,4 +1,4 @@
-use crate::builtin_interfaces::Time;
+use crate::std_msgs::Header;
 use serde_derive::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
@@ -10,5 +10,6 @@ pub struct HykeThrusterCommand {
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct HykeThrusterCommands {
-    pub thruster_command: Vec<HykeThrusterCommand>,
+    pub header: Header,
+    pub commands: [HykeThrusterCommand; 3],
 }
