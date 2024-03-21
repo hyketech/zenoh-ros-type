@@ -3,7 +3,7 @@ use serde_derive::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, PartialEq, Clone, Copy)]
 pub struct HykeThrusterCommand {
-    pub i: i32, // index
+    pub i: i8, // index
     pub u: f32, // power / force
     pub alpha: f32, // angle
 }
