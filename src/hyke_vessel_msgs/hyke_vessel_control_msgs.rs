@@ -11,5 +11,5 @@ pub struct HykeThrusterCommand {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct HykeThrusterCommands {
     pub header: Header,
-    pub commands: [HykeThrusterCommand; 1],
+    pub commands: [(i8, f32, f32); 1],
 }
