@@ -1,7 +1,7 @@
 use crate::std_msgs::Header;
 use serde_derive::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, PartialEq, Clone, Copy)]
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct HykeThrusterCommand {
     pub header: Header,
     pub i: i32, // index
