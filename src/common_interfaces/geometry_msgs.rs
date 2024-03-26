@@ -1,5 +1,6 @@
 use crate::std_msgs;
 use serde_derive::{Deserialize, Serialize};
+use serde_big_array::BigArray;
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct Accel {
@@ -68,7 +69,8 @@ pub struct Pose {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct PoseWithCovariance {
     pub pose: Pose,
-    pub covariance: [f64;32],
+    #[serde(with = "BigArray")]
+    pub covariance: [f64;36],
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
@@ -100,7 +102,8 @@ pub struct Twist {
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
 pub struct TwistWithCovariance {
     pub twist: Twist,
-    pub covariance: [f64;32],
+    #[serde(with = "BigArray")]
+    pub covariance: [f64;36],
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Clone)]
