@@ -14,3 +14,8 @@ pub struct ColorRGBA {
     pub b: f32,
     pub a: f32,
 }
+
+#[derive(Serialize, Deserialize, PartialEq, Clone)]
+pub struct Float64 {
+    pub data: f64,
+}
